@@ -1,0 +1,13 @@
+﻿node_modules/
+*.log
+.env
+.env.*
+!.env.example
+.vercel/
+.neon
+# Preserved local source checkout and development-only artifacts
+thirty/
+tracker-tools/
+card-image-review/
+thirty-deploy.tar.gz
+materialize-root.cjs

@@ -1,0 +1,22 @@
+{
+  "name": "thirty-collection-tracker",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build-static.cjs",
+    "test": "node verify.cjs && node verify-pricing.cjs && node verify-loading.cjs && node verify-catalog.cjs && node verify-three-view.cjs && node verify-copy.cjs && node verify-backend.cjs",
+    "dev": "node --env-file-if-exists=.env.local scripts/dev.cjs",
+    "db:migrate": "node --env-file-if-exists=.env.local scripts/migrate.cjs",
+    "test:db": "node scripts/run-db-tests.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "29.1.1"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.10.1",
+    "pg": "^8.23.1"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

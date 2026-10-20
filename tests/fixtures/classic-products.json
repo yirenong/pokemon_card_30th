@@ -1,0 +1,166 @@
+{
+  "set_id": 24837,
+  "set_name": "ME: 30th Celebration Classic Collection",
+  "set_abbr": "30C",
+  "set_released": "2026-09-16",
+  "product_count": 30,
+  "data_modified": "2026-10-08T06:00:10-04:00",
+  "file_generated": "2026-10-08T08:31:22-04:00",
+  "pricing_url": "/v1/3/sets/24837/pricing",
+  "cards_url": "/v1/3/sets/24837/cards",
+  "sealed_url": "/v1/3/sets/24837/sealed",
+  "skus_url": "/v1/3/sets/24837/skus",
+  "products": [
+    {
+      "id": 716192,
+      "name": "Raikou",
+      "number": "050/185"
+    },
+    {
+      "id": 716200,
+      "name": "Darkrai & Cresselia Legend (Bottom)",
+      "number": "100/102"
+    },
+    {
+      "id": 716202,
+      "name": "N",
+      "number": "101/101"
+    },
+    {
+      "id": 716205,
+      "name": "Shining Celebi",
+      "number": "106/105"
+    },
+    {
+      "id": 716203,
+      "name": "Palkia LV.X",
+      "number": "106/106"
+    },
+    {
+      "id": 716204,
+      "name": "M Gardevoir EX",
+      "number": "106/160"
+    },
+    {
+      "id": 716206,
+      "name": "Scizor ex",
+      "number": "108/115"
+    },
+    {
+      "id": 716158,
+      "name": "Genesect EX (Team Plasma)",
+      "number": "11/101"
+    },
+    {
+      "id": 716157,
+      "name": "Metagross (Delta Species)",
+      "number": "11/113"
+    },
+    {
+      "id": 716207,
+      "name": "Mew VMAX",
+      "number": "114/264"
+    },
+    {
+      "id": 716208,
+      "name": "Arceus VSTAR",
+      "number": "123/172"
+    },
+    {
+      "id": 716209,
+      "name": "Zacian V",
+      "number": "138/202"
+    },
+    {
+      "id": 714386,
+      "name": "Lugia",
+      "number": "149/147"
+    },
+    {
+      "id": 716159,
+      "name": "Misty",
+      "number": "18/132"
+    },
+    {
+      "id": 716160,
+      "name": "Dark Tyranitar",
+      "number": "19/109"
+    },
+    {
+      "id": 716210,
+      "name": "Magikarp",
+      "number": "203/193"
+    },
+    {
+      "id": 716161,
+      "name": "Sneasel",
+      "number": "25/111"
+    },
+    {
+      "id": 714373,
+      "name": "Pikachu & Zekrom GX",
+      "number": "33/181"
+    },
+    {
+      "id": 714372,
+      "name": "Charizard",
+      "number": "4/102"
+    },
+    {
+      "id": 716162,
+      "name": "Greninja BREAK",
+      "number": "41/122"
+    },
+    {
+      "id": 716163,
+      "name": "Uxie",
+      "number": "43/146"
+    },
+    {
+      "id": 716191,
+      "name": "Crobat G",
+      "number": "47/127"
+    },
+    {
+      "id": 716156,
+      "name": "Delcatty",
+      "number": "5/109"
+    },
+    {
+      "id": 716193,
+      "name": "Buzzwole GX",
+      "number": "57/111"
+    },
+    {
+      "id": 716194,
+      "name": "Pikachu",
+      "number": "58/102"
+    },
+    {
+      "id": 716195,
+      "name": "Erika's Jigglypuff",
+      "number": "69/132"
+    },
+    {
+      "id": 716196,
+      "name": "Rayquaza EX",
+      "number": "85/124"
+    },
+    {
+      "id": 716197,
+      "name": "Solgaleo GX",
+      "number": "89/149"
+    },
+    {
+      "id": 716198,
+      "name": "Gengar (Prime)",
+      "number": "94/102"
+    },
+    {
+      "id": 716199,
+      "name": "Darkrai & Cresselia Legend (Top)",
+      "number": "99/102"
+    }
+  ],
+  "product_type": "cards"
+}

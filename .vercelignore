@@ -1,0 +1,15 @@
+﻿.env
+.env.local
+.env.test.local
+.env.*.local
+.git
+node_modules
+tests
+verify*.cjs
+checklist.txt
+checklist.pdf
+thirty
+tracker-tools
+card-image-review
+thirty-deploy.tar.gz
+materialize-root.cjs
