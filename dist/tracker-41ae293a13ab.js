@@ -642,13 +642,13 @@ if (window.ThirtyLoginId !== null) initializeChecklist();
 ;
 (() => {
   const mixes = [
-    {id:'m1vtEX64gmE', title:'Pok?mon Lofi ? Mix 1'},
-    {id:'43DV570YjFU', title:'Pok?mon Lofi ? Mix 2'}
+    {id:'m1vtEX64gmE', title:'Pok\u00e9mon Lofi - Mix 1'},
+    {id:'43DV570YjFU', title:'Pok\u00e9mon Lofi - Mix 2'}
   ];
   const widget = document.createElement('aside');
   widget.className = 'music-widget';
-  widget.setAttribute('aria-label', 'Pok?mon chill music');
-  widget.innerHTML = '<section class="music-panel" id="musicPanel"><div class="music-heading"><div><span class="music-eyebrow">A LITTLE BACKGROUND COMPANY</span><h2>Pok?mon &amp; chill</h2></div><button class="music-close" type="button" aria-label="Close music player">&times;</button></div><p class="music-track"></p><div class="music-screen"><div id="musicVideo"></div></div><div class="music-controls"><button type="button" data-music="previous" aria-label="Previous mix" title="Previous mix">&#9198;</button><button type="button" data-music="play" aria-label="Play" title="Play">&#9654;</button><button type="button" data-music="stop" aria-label="Stop" title="Stop">&#9632;</button><button type="button" data-music="next" aria-label="Next mix" title="Next mix">&#9197;</button></div><p class="music-status" role="status">Connecting to chill radio?</p><a class="music-source" target="_blank" rel="noopener">GlitchxCity ? Listen on YouTube ?</a></section><button class="music-reopen" type="button" aria-label="Open music player" aria-controls="musicPanel" aria-expanded="true" hidden>? Music</button>';
+  widget.setAttribute('aria-label', 'Pok\u00e9mon chill music');
+  widget.innerHTML = '<section class="music-panel" id="musicPanel"><div class="music-heading"><div><span class="music-eyebrow">A LITTLE BACKGROUND COMPANY</span><h2>Pok\u00e9mon &amp; chill</h2></div><div class="music-window-controls"><button class="music-minimize" type="button" aria-label="Minimize music player" title="Minimize" aria-expanded="true">&#8722;</button><button class="music-close" type="button" aria-label="Close music player">&times;</button></div></div><p class="music-track"></p><div class="music-screen"><div id="musicVideo"></div></div><div class="music-controls"><button type="button" data-music="previous" aria-label="Previous mix" title="Previous mix">&#9198;</button><button type="button" data-music="play" aria-label="Play" title="Play">&#9654;</button><button type="button" data-music="stop" aria-label="Stop" title="Stop">&#9632;</button><button type="button" data-music="next" aria-label="Next mix" title="Next mix">&#9197;</button></div><p class="music-status" role="status">Connecting to chill radio...</p><a class="music-source" target="_blank" rel="noopener">GlitchxCity - Listen on YouTube &#8599;</a></section><button class="music-reopen" type="button" aria-label="Open music player" aria-controls="musicPanel" aria-expanded="true" hidden>&#9835; Music</button>';
   document.body.append(widget);
   const panel = widget.querySelector('.music-panel');
   const reopen = widget.querySelector('.music-reopen');
@@ -656,7 +656,7 @@ if (window.ThirtyLoginId !== null) initializeChecklist();
   const status = widget.querySelector('.music-status');
   let index = 0, player = null, ready = false, playing = false, wantsPlay = true, closed = false;
   function label() {
-    widget.querySelector('.music-track').textContent = mixes[index].title + ' ? GlitchxCity';
+    widget.querySelector('.music-track').textContent = mixes[index].title + ' - GlitchxCity';
     widget.querySelector('.music-source').href = 'https://www.youtube.com/watch?v=' + mixes[index].id;
   }
   function playState(value) {
@@ -668,20 +668,28 @@ if (window.ThirtyLoginId !== null) initializeChecklist();
   function change(delta) {
     index = (index + delta + mixes.length) % mixes.length;
     label(); wantsPlay = true; playState(false);
-    status.textContent = 'Loading mix?';
+    status.textContent = 'Loading mix...';
     if (ready) player.loadVideoById(mixes[index].id);
   }
   widget.querySelector('[data-music="previous"]').onclick = () => change(-1);
   widget.querySelector('[data-music="next"]').onclick = () => change(1);
   play.onclick = () => {
-    if (!ready) { wantsPlay = true; status.textContent = 'Connecting? If unavailable, listen on YouTube below.'; return; }
+    if (!ready) { wantsPlay = true; status.textContent = 'Connecting... If unavailable, listen on YouTube below.'; return; }
     wantsPlay = !playing;
     if (playing) player.pauseVideo(); else player.playVideo();
   };
   widget.querySelector('[data-music="stop"]').onclick = () => {
     wantsPlay = false;
     if (ready) player.stopVideo();
-    playState(false); status.textContent = 'Stopped ? Press play to restart.';
+    playState(false); status.textContent = 'Stopped - Press play to restart.';
+  };
+  const minimize = widget.querySelector('.music-minimize');
+  minimize.onclick = () => {
+    const minimized = widget.classList.toggle('music-minimized');
+    minimize.innerHTML = minimized ? '&#8599;' : '&#8722;';
+    minimize.setAttribute('aria-label', minimized ? 'Expand music player' : 'Minimize music player');
+    minimize.setAttribute('aria-expanded', String(!minimized));
+    minimize.title = minimized ? 'Expand' : 'Minimize';
   };
   widget.querySelector('.music-close').onclick = () => {
     closed = true; wantsPlay = false;
@@ -704,7 +712,7 @@ if (window.ThirtyLoginId !== null) initializeChecklist();
         onReady(event) {
           ready = true;
           const frame = event.target.getIframe();
-          frame.title = 'Pok?mon chill mix player';
+          frame.title = 'Pok\u00e9mon chill mix player';
           frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
           event.target.setVolume(30);
           if (wantsPlay && !closed) event.target.loadVideoById(mixes[index].id);
@@ -712,12 +720,12 @@ if (window.ThirtyLoginId !== null) initializeChecklist();
         },
         onStateChange(event) {
           if (closed || !wantsPlay && event.data === 1) { player.stopVideo(); playState(false); return; }
-          if (event.data === 1) { playState(true); status.textContent = 'Now playing ? Sit back and collect.'; }
+          if (event.data === 1) { playState(true); status.textContent = 'Now playing - Sit back and collect.'; }
           else if (event.data === 2) { playState(false); status.textContent = 'Paused'; }
           else if (event.data === 0 && wantsPlay) change(1);
         },
-        onAutoplayBlocked() { playState(false); status.textContent = 'Your browser needs a click ? Press play to start.'; },
-        onError() { playState(false); status.textContent = 'Mix unavailable ? Try next or listen on YouTube.'; }
+        onAutoplayBlocked() { playState(false); status.textContent = 'Your browser needs a click - Press play to start.'; },
+        onError() { playState(false); status.textContent = 'Mix unavailable - Try next or listen on YouTube.'; }
       }
     });
   }
@@ -727,7 +735,7 @@ if (window.ThirtyLoginId !== null) initializeChecklist();
     const previous = window.onYouTubeIframeAPIReady;
     window.onYouTubeIframeAPIReady = () => { if (previous) previous(); init(); };
     const script = document.createElement('script'); script.src = 'https://www.youtube.com/iframe_api';
-    script.onerror = () => { status.textContent = 'Player unavailable ? Listen on YouTube below.'; };
+    script.onerror = () => { status.textContent = 'Player unavailable - Listen on YouTube below.'; };
     document.head.append(script);
   }
 })();
