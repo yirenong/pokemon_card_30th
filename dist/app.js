@@ -1,4 +1,4 @@
-﻿const KEY = 'thirty-tracker-v1';
+﻿const KEY = 'thirty-tracker-v1' + (window.ThirtyLoginId ? ':' + window.ThirtyLoginId : '');
 const VIEW_KEY = 'thirty-tracker-view';
 let cards = [], quantities = {}, status = 'all', layout = 'list', limit = 24, activeCard = null;
 let pageIndex = 0;
@@ -350,4 +350,5 @@ function initializeChecklist() {
     $('#marketStatus').textContent = 'Pricing is unavailable. Your card checklist still works.';
   }
 }
-initializeChecklist();
+window.ThirtyStartChecklist = initializeChecklist;
+if (window.ThirtyLoginId !== null) initializeChecklist();

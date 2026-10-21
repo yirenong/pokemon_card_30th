@@ -1,5 +1,5 @@
 ﻿(function(root) {
-  const OUTBOX_KEY = 'thirty-backend-outbox-v1';
+  const OUTBOX_KEY = 'thirty-backend-outbox-v1' + (root.ThirtyLoginId ? ':' + root.ThirtyLoginId : '');
   function create(options) {
     const ids = new Set(options.ids);
     const storage = options.storage;
@@ -40,7 +40,7 @@
     async function request(body, keepalive = false) {
       const response = await fetcher('/api/collection',{
         method:body ? 'PATCH' : 'GET',
-        headers:body ? {'Content-Type':'application/json'} : {'Accept':'application/json'},
+        headers:{...(body ? {'Content-Type':'application/json'} : {'Accept':'application/json'}),...(root.ThirtyLoginId ? {'X-Login-Id':root.ThirtyLoginId} : {})},
         body:body ? JSON.stringify(body) : undefined,
         cache:'no-store', credentials:'same-origin', keepalive,
         signal:root.AbortSignal?.timeout?.(20000)

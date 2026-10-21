@@ -5,10 +5,10 @@ import handlerModule from '../server/collection-handler.cjs';
 
 const pool = new pg.Pool({connectionString:process.env.DATABASE_URL,max:3,connectionTimeoutMillis:10000,idleTimeoutMillis:5000});
 attachDatabasePool(pool);
-const handler = handlerModule.createHandler(()=>new storeModule.CollectionStore(pool));
+const handler = handlerModule.createHandler(loginId=>new storeModule.CollectionStore(pool,loginId));
 
-// This is intentionally one public shared checklist, as requested. No database
-// credentials are exposed. The same validation runs here and on the Vercel API.
+// Password-free profiles select separate checklists. Database credentials remain
+// server-only. The same validation runs here and on the Vercel API.
 export default {
   async fetch(request) {
     if (new URL(request.url).pathname !== '/') return new Response('Not found',{status:404});

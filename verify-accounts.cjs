@@ -1,0 +1,3 @@
+const assert=require('node:assert/strict');const {getPool}=require('./server/db.cjs');const {CollectionStore}=require('./server/collection-store.cjs');
+if(process.env.COLLECTION_TEST_MODE!=='1')throw Error('Test branch required');
+(async()=>{const pool=getPool();try{const names=['shawn','yongtai','sam','yiren'];const stores=names.map(id=>new CollectionStore(pool,id));for(const store of stores)await store.update([{id:'30c-1',owned:false}]);await stores[0].update([{id:'30c-1',owned:true}]);for(let i=0;i<stores.length;i++)assert.equal((await stores[i].read()).owned['30c-1'],i===0);console.log('PASS: four persisted login profiles; Shawn writes do not affect the other three collections');}finally{await pool.end()}})().catch(e=>{console.error(e);process.exit(1)});

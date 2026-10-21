@@ -2,7 +2,7 @@
 
 Responsive checkbox tracker with list, image-grid, and 3 × 3 views; missing-card clipboard export; and USD/SGD market-value dashboard.
 
-**Hosting details: [VERCEL.md](VERCEL.md).** The shared collection automatically saves through `/api/collection` into Neon Postgres, with no app login. A deployed Neon Function provides storage when Vercel has no `DATABASE_URL`; no manual Vercel environment setup is needed for this repository. Database credentials stay inside Neon. An explicit server `DATABASE_URL` takes precedence for isolated testing or another database.
+**Hosting details: [VERCEL.md](VERCEL.md).** The shared collection automatically saves through `/api/collection` into Neon Postgres, with password-free login IDs. A deployed Neon Function provides storage when Vercel has no `DATABASE_URL`; no manual Vercel environment setup is needed for this repository. Database credentials stay inside Neon. An explicit server `DATABASE_URL` takes precedence for isolated testing or another database.
 
 ## Development and checks
 
@@ -16,7 +16,7 @@ The full 196-entry checklist is prerendered into HTML and embedded into the page
 
 ## Shared collection data
 
-No login is required. This is one shared collection: everyone opening the deployment can edit it. API writes update individual cards in a transaction, so unrelated edits do not overwrite each other. The client keeps a durable pending-change queue, retries failed saves, imports a same-domain browser cache only when the database is empty, and shows honest connection/save status. Device layout and currency settings stay in browser storage.
+The login IDs shawn, yongtai, sam, and yiren select separate collections. No password is required. API writes update individual cards in a transaction, so unrelated edits do not overwrite each other. The client keeps a durable pending-change queue, retries failed saves, imports a same-domain browser cache only when the database is empty, and shows honest connection/save status. Device layout and currency settings stay in browser storage.
 
 ## Market data
 
@@ -30,3 +30,11 @@ Use the exact mapped `Holofoil.market` USD quote. Eight Energy entries have no v
 ## Rarity filters and bulk ownership
 
 Choose a rarity, then use Check all / Uncheck all to update that entire rarity across sections, searches, and pages. Common, Rare, Double Rare, IR, SIR, Pikachu Rare, Futuristic Rare, Classic Collection, and Energy follow the catalog labels. The controls show owned/total progress, disable when there is nothing to change, and do not alter other rarities. Backend sync batches the full group into one request. `verify-rarity.cjs` covers group isolation, pagination, counters, and queue batching.
+
+## Password-free login IDs
+
+The app now accepts shawn, yongtai, sam, and yiren. Each profile has its own collection and device cache. Enter an ID on the login screen; use Switch account to change profiles. No password is required; anyone who knows an ID can use it. The previous shared collection remains stored separately for legacy clients.
+
+Migration 002 creates the four empty profiles without changing existing selections. Run migrations on the test branch first. Deploy the updated storage Function and the Vercel application together so the API forwards the login ID. The remote adapter rejects services that do not acknowledge the selected ID.
+
+Run the account-isolation test with COLLECTION_TEST_MODE=1 and .env.test.local: node --env-file=.env.test.local verify-accounts.cjs.

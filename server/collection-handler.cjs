@@ -15,14 +15,17 @@ function validateBody(body) {
   });
   return {changes, initialize:body.action === 'initialize'};
 }
-function createHandler(storeFactory = () => process.env.DATABASE_URL ? new CollectionStore(getPool()) : new RemoteCollectionStore()) {
+function createHandler(storeFactory = loginId => process.env.DATABASE_URL ? new CollectionStore(getPool(),loginId) : new RemoteCollectionStore(undefined,undefined,loginId)) {
   return async function handler(req,res) {
     res.setHeader('Cache-Control','no-store, max-age=0');
     res.setHeader('X-Content-Type-Options','nosniff');
+    res.setHeader('Vary','X-Login-Id');
     if (!['GET','PATCH'].includes(req.method)) {
       res.setHeader('Allow','GET, PATCH');
       return res.status(405).json({error:'METHOD_NOT_ALLOWED'});
     }
+    const loginId = req.headers['x-login-id'];
+    if (loginId !== undefined && !['shawn','yongtai','sam','yiren'].includes(loginId)) return res.status(401).json({error:'INVALID_LOGIN_ID'});
     let data;
     if (req.method === 'PATCH') {
       // No login is required, but unrelated browser origins cannot submit writes.
@@ -37,9 +40,9 @@ function createHandler(storeFactory = () => process.env.DATABASE_URL ? new Colle
       } catch {return res.status(400).json({error:'INVALID_CHANGES'})}
     }
     try {
-      const store = storeFactory();
+      const store = storeFactory(loginId);
       const snapshot = req.method === 'GET' ? await store.read() : await store.update(data.changes,data.initialize);
-      return res.status(200).json(snapshot);
+      return res.status(200).json({...snapshot,...(loginId?{loginId}:{})});
     } catch (error) {
       const code = error.code === 'STORAGE_NOT_CONFIGURED' ? 'STORAGE_NOT_CONFIGURED' : ['SCHEMA_NOT_READY','42P01'].includes(error.code) ? 'SCHEMA_NOT_READY' : 'STORAGE_UNAVAILABLE';
       console.error('Collection storage request failed',code);

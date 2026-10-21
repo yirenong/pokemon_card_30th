@@ -6,8 +6,8 @@ async function migrate(connectionString) {
   try {
     await client.connect();
     await client.query('BEGIN');
-    const sql=fs.readFileSync(require('path').join(__dirname,'../db/migrations/001_collection.sql'),'utf8').replace(/^\uFEFF/,'');
-    await client.query(sql);
+    const directory=require('path').join(__dirname,'../db/migrations');
+    for (const file of fs.readdirSync(directory).filter(f=>f.endsWith('.sql')).sort()) await client.query(fs.readFileSync(require('path').join(directory,file),'utf8').replace(/^\uFEFF/,''));
     await client.query('COMMIT');
     console.log('Collection schema ready.');
   } catch(error) {await client.query('ROLLBACK').catch(()=>{});throw error} finally {await client.end()}

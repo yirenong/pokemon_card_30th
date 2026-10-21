@@ -1,0 +1,1 @@
+INSERT INTO pokemon_collections (collection_id, initialized) SELECT '30th-celebration:' || login_id, true FROM unnest(ARRAY['shawn','yongtai','sam','yiren']) AS login_id ON CONFLICT (collection_id) DO NOTHING;
