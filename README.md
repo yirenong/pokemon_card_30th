@@ -2,7 +2,7 @@
 
 Responsive checkbox tracker with list, image-grid, and 3 × 3 views; missing-card clipboard export; and USD/SGD market-value dashboard.
 
-**Vercel backend setup: [VERCEL.md](VERCEL.md).** The shared collection now automatically saves through `/api/collection` into Neon Postgres, with no app login. The production schema has already been provisioned. The included `.env.local` is ignored and contains the server connection string you must add to Vercel.
+**Hosting details: [VERCEL.md](VERCEL.md).** The shared collection automatically saves through `/api/collection` into Neon Postgres, with no app login. A deployed Neon Function provides storage when Vercel has no `DATABASE_URL`; no manual Vercel environment setup is needed for this repository. Database credentials stay inside Neon. An explicit server `DATABASE_URL` takes precedence for isolated testing or another database.
 
 ## Development and checks
 

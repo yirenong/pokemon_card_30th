@@ -1,6 +1,7 @@
 ﻿const cards = require('../dist/cards.json');
 const {getPool} = require('./db.cjs');
 const {CollectionStore} = require('./collection-store.cjs');
+const {RemoteCollectionStore} = require('./remote-store.cjs');
 const ids = new Set(cards.map(card=>card.id));
 function validateBody(body) {
   if (!body || typeof body !== 'object' || Array.isArray(body) || !['update','initialize'].includes(body.action)) throw Error('Invalid action');
@@ -14,7 +15,7 @@ function validateBody(body) {
   });
   return {changes, initialize:body.action === 'initialize'};
 }
-function createHandler(storeFactory = () => new CollectionStore(getPool())) {
+function createHandler(storeFactory = () => process.env.DATABASE_URL ? new CollectionStore(getPool()) : new RemoteCollectionStore()) {
   return async function handler(req,res) {
     res.setHeader('Cache-Control','no-store, max-age=0');
     res.setHeader('X-Content-Type-Options','nosniff');

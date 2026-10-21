@@ -5,7 +5,7 @@ This version uses a Vercel API and a Neon Postgres database for one shared colle
 ## Deploy
 
 1. Import this repository into Vercel. Set **Root Directory** to `.` (leave the field blank for the repository root), **Framework Preset** to **Other**, **Build Command** to `npm run build`, and **Output Directory** to `dist`. The root `vercel.json` already declares these defaults and the `/api/collection` function. Do not use the old `thirty` root-directory setting.
-2. In Vercel → Project → Settings → Environment Variables, add **`DATABASE_URL`**, using the value already prepared in the ignored `.env.local` file. Select Production. For Preview deployments, use the separate test database URL from `.env.test.local` so preview edits do not affect your real collection.
+2. No database environment variable is required for the existing collection. The Vercel API forwards validated requests to the deployed Neon Function, which receives its database connection securely from Neon. For isolated Preview deployments, explicitly set `DATABASE_URL` to the separate test database URL from `.env.test.local`; otherwise previews share the real collection.
 3. Deploy. Check a card: the status changes from “Saving to backend…” to **“Saved to backend · shared across devices”**. Open the same deployment URL on another device to see your collection. The page checks for other-device changes every 30 seconds and when returning to the page.
 
 The production database and schema have already been provisioned. No migration is needed for this database. Database credentials are server-only: do not add a `NEXT_PUBLIC_`/`VITE_` prefix or put the connection URL in `dist`, JavaScript, or Git.
@@ -60,4 +60,10 @@ Source references: [Vercel Node functions](https://vercel.com/docs/functions/run
 
 ## Fix a Vercel 404 after an earlier deployment
 
-The app now lives at the repository root. In Project Settings → Build and Deployment, set Root Directory to `.` (repository root), Framework Preset to Other, Build Command to `npm run build`, and Output Directory to `dist`. Redeploy the latest commit. A missing `DATABASE_URL` will show a backend configuration message; it should not cause the homepage to return 404.
+The app now lives at the repository root. In Project Settings → Build and Deployment, set Root Directory to `.` (repository root), Framework Preset to Other, Build Command to `npm run build`, and Output Directory to `dist`. Redeploy the latest commit. Without `DATABASE_URL`, the API uses the deployed Neon storage service automatically.
+
+## Storage service
+
+`functions/collection.mjs` runs beside the production database as the Neon Function `collection`. Build its bundle with `node scripts/build-function.cjs`; the generated `.neon/function/index.mjs` is ignored by Git. Deploy an archive containing this file as `index.mjs` to the intended branch. Database connection strings are injected by Neon. The non-secret production service URL lives in `server/remote-store.cjs`. The service is deliberately public because this app uses one shared collection without login; it validates card IDs and boolean ownership values before writing. It supplies no database credentials to callers.
+
+The isolated test Function is on `br-withered-voice-a1czqdex`. `verify-remote.cjs` verifies cross-client saves against that Function when `COLLECTION_TEST_FUNCTION_URL` is set, and refuses production URLs.
