@@ -26,3 +26,7 @@ No login is required. This is one shared collection: everyone opening the deploy
 Use the exact mapped `Holofoil.market` USD quote. Eight Energy entries have no verified listing and remain unpriced, excluded from totals. No runtime prices or exchange rates are embedded. The page checks every 15 minutes while visible; providers publish daily data, not instant sale-by-sale quotes. Update times, partial coverage, stale values, and refresh failures are shown. Valuation counts one copy per checked card and excludes fees, shipping, condition and graded pricing. SGD is a conversion of the US-market estimate, not a local Singapore marketplace quote.
 
 `tests/fixtures` contains catalog and price snapshots only for deterministic tests, not production pricing. Browser visual QA was unavailable; DOM and real-database integration checks passed.
+
+## Rarity filters and bulk ownership
+
+Choose a rarity, then use Check all / Uncheck all to update that entire rarity across sections, searches, and pages. Common, Rare, Double Rare, IR, SIR, Pikachu Rare, Futuristic Rare, Classic Collection, and Energy follow the catalog labels. The controls show owned/total progress, disable when there is nothing to change, and do not alter other rarities. Backend sync batches the full group into one request. `verify-rarity.cjs` covers group isolation, pagination, counters, and queue batching.

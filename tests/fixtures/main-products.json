@@ -14,852 +14,1022 @@
     {
       "id": 716639,
       "name": "Code Card - 30th Celebration Battle Deck [Espeon ex]",
-      "number": null
+      "number": null,
+      "rarity": "Code Card"
     },
     {
       "id": 716640,
       "name": "Code Card - 30th Celebration Battle Deck [Umbreon ex]",
-      "number": null
+      "number": null,
+      "rarity": "Code Card"
     },
     {
       "id": 717831,
       "name": "Code Card - 30th Celebration Booster Pack",
-      "number": null
+      "number": null,
+      "rarity": "Code Card"
     },
     {
       "id": 716642,
       "name": "Code Card - 30th Celebration Ditto Premium Collection",
-      "number": null
+      "number": null,
+      "rarity": "Code Card"
     },
     {
       "id": 716631,
       "name": "Code Card - 30th Celebration Elite Trainer Box",
-      "number": null
+      "number": null,
+      "rarity": "Code Card"
     },
     {
       "id": 716636,
       "name": "Code Card - 30th Celebration Mini Tin digital bundle",
-      "number": null
+      "number": null,
+      "rarity": "Code Card"
     },
     {
       "id": 716632,
       "name": "Code Card - 30th Celebration Pokemon Center Elite Trainer Box",
-      "number": null
+      "number": null,
+      "rarity": "Code Card"
     },
     {
       "id": 716643,
       "name": "Code Card - 30th Celebration Ultra-Premium Collection - Day",
-      "number": null
+      "number": null,
+      "rarity": "Code Card"
     },
     {
       "id": 716645,
       "name": "Code Card - 30th Celebration Ultra-Premium Collection - Night",
-      "number": null
+      "number": null,
+      "rarity": "Code Card"
     },
     {
       "id": 716435,
       "name": "Exeggcute",
-      "number": "001/128"
+      "number": "001/128",
+      "rarity": "Common"
     },
     {
       "id": 716436,
       "name": "Alolan Exeggutor - 002/128",
-      "number": "002/128"
+      "number": "002/128",
+      "rarity": "Common"
     },
     {
       "id": 716437,
       "name": "Volbeat",
-      "number": "003/128"
+      "number": "003/128",
+      "rarity": "Common"
     },
     {
       "id": 716438,
       "name": "Illumise",
-      "number": "004/128"
+      "number": "004/128",
+      "rarity": "Common"
     },
     {
       "id": 716439,
       "name": "Tropius",
-      "number": "005/128"
+      "number": "005/128",
+      "rarity": "Common"
     },
     {
       "id": 716440,
       "name": "Cherubi",
-      "number": "006/128"
+      "number": "006/128",
+      "rarity": "Common"
     },
     {
       "id": 716441,
       "name": "Cherrim",
-      "number": "007/128"
+      "number": "007/128",
+      "rarity": "Common"
     },
     {
       "id": 716442,
       "name": "Vivillon",
-      "number": "008/128"
+      "number": "008/128",
+      "rarity": "Common"
     },
     {
       "id": 716443,
       "name": "Vulpix",
-      "number": "009/128"
+      "number": "009/128",
+      "rarity": "Common"
     },
     {
       "id": 716444,
       "name": "Ninetales",
-      "number": "010/128"
+      "number": "010/128",
+      "rarity": "Common"
     },
     {
       "id": 716445,
       "name": "Moltres - 011/128",
-      "number": "011/128"
+      "number": "011/128",
+      "rarity": "Common"
     },
     {
       "id": 716446,
       "name": "Ho-Oh",
-      "number": "012/128"
+      "number": "012/128",
+      "rarity": "Rare"
     },
     {
       "id": 696830,
       "name": "Victini",
-      "number": "013/128"
+      "number": "013/128",
+      "rarity": "Common"
     },
     {
       "id": 716447,
       "name": "Reshiram",
-      "number": "014/128"
+      "number": "014/128",
+      "rarity": "Rare"
     },
     {
       "id": 716448,
       "name": "Fuecoco ex - 015/128",
-      "number": "015/128"
+      "number": "015/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 716449,
       "name": "Slowpoke",
-      "number": "016/128"
+      "number": "016/128",
+      "rarity": "Common"
     },
     {
       "id": 716450,
       "name": "Lapras - 017/128",
-      "number": "017/128"
+      "number": "017/128",
+      "rarity": "Common"
     },
     {
       "id": 716451,
       "name": "Articuno - 018/128",
-      "number": "018/128"
+      "number": "018/128",
+      "rarity": "Common"
     },
     {
       "id": 716452,
       "name": "Kyogre",
-      "number": "019/128"
+      "number": "019/128",
+      "rarity": "Rare"
     },
     {
       "id": 716453,
       "name": "Palkia",
-      "number": "020/128"
+      "number": "020/128",
+      "rarity": "Rare"
     },
     {
       "id": 696676,
       "name": "Greninja ex - 021/128",
-      "number": "021/128"
+      "number": "021/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 716454,
       "name": "Wishiwashi",
-      "number": "022/128"
+      "number": "022/128",
+      "rarity": "Common"
     },
     {
       "id": 712934,
       "name": "Pikachu - 023/128",
-      "number": "023/128"
+      "number": "023/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716309,
       "name": "Pikachu - 024/128",
-      "number": "024/128"
+      "number": "024/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712935,
       "name": "Pikachu - 025/128",
-      "number": "025/128"
+      "number": "025/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712936,
       "name": "Pikachu - 026/128",
-      "number": "026/128"
+      "number": "026/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716310,
       "name": "Pikachu - 027/128",
-      "number": "027/128"
+      "number": "027/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712937,
       "name": "Pikachu - 028/128",
-      "number": "028/128"
+      "number": "028/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716311,
       "name": "Pikachu - 029/128",
-      "number": "029/128"
+      "number": "029/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712938,
       "name": "Pikachu - 030/128",
-      "number": "030/128"
+      "number": "030/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716312,
       "name": "Pikachu - 031/128",
-      "number": "031/128"
+      "number": "031/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712939,
       "name": "Pikachu - 032/128",
-      "number": "032/128"
+      "number": "032/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712940,
       "name": "Pikachu - 033/128",
-      "number": "033/128"
+      "number": "033/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712941,
       "name": "Pikachu - 034/128",
-      "number": "034/128"
+      "number": "034/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716313,
       "name": "Pikachu - 035/128",
-      "number": "035/128"
+      "number": "035/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 696680,
       "name": "Pikachu - 036/128",
-      "number": "036/128"
+      "number": "036/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 696681,
       "name": "Pikachu - 037/128",
-      "number": "037/128"
+      "number": "037/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712942,
       "name": "Pikachu - 038/128",
-      "number": "038/128"
+      "number": "038/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712943,
       "name": "Pikachu - 039/128",
-      "number": "039/128"
+      "number": "039/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712944,
       "name": "Pikachu - 040/128",
-      "number": "040/128"
+      "number": "040/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712945,
       "name": "Pikachu - 041/128",
-      "number": "041/128"
+      "number": "041/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712946,
       "name": "Pikachu - 042/128",
-      "number": "042/128"
+      "number": "042/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712947,
       "name": "Pikachu - 043/128",
-      "number": "043/128"
+      "number": "043/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712948,
       "name": "Pikachu - 044/128",
-      "number": "044/128"
+      "number": "044/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716314,
       "name": "Pikachu - 045/128",
-      "number": "045/128"
+      "number": "045/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716315,
       "name": "Pikachu - 046/128",
-      "number": "046/128"
+      "number": "046/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 696682,
       "name": "Pikachu - 047/128",
-      "number": "047/128"
+      "number": "047/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716316,
       "name": "Pikachu - 048/128",
-      "number": "048/128"
+      "number": "048/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712949,
       "name": "Pikachu - 049/128",
-      "number": "049/128"
+      "number": "049/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712950,
       "name": "Pikachu - 050/128",
-      "number": "050/128"
+      "number": "050/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716317,
       "name": "Pikachu - 051/128",
-      "number": "051/128"
+      "number": "051/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 716318,
       "name": "Pikachu - 052/128",
-      "number": "052/128"
+      "number": "052/128",
+      "rarity": "Pikachu Rare"
     },
     {
       "id": 712951,
       "name": "Pikachu ex - 053/128",
-      "number": "053/128"
+      "number": "053/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 712952,
       "name": "Pikachu ex - 054/128",
-      "number": "054/128"
+      "number": "054/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 716455,
       "name": "Zapdos - 055/128",
-      "number": "055/128"
+      "number": "055/128",
+      "rarity": "Common"
     },
     {
       "id": 716456,
       "name": "Zekrom",
-      "number": "056/128"
+      "number": "056/128",
+      "rarity": "Rare"
     },
     {
       "id": 696831,
       "name": "Zeraora",
-      "number": "057/128"
+      "number": "057/128",
+      "rarity": "Common"
     },
     {
       "id": 716457,
       "name": "Toxel",
-      "number": "058/128"
+      "number": "058/128",
+      "rarity": "Common"
     },
     {
       "id": 716458,
       "name": "Toxtricity - 059/128",
-      "number": "059/128"
+      "number": "059/128",
+      "rarity": "Common"
     },
     {
       "id": 716459,
       "name": "Toxtricity - 060/128",
-      "number": "060/128"
+      "number": "060/128",
+      "rarity": "Common"
     },
     {
       "id": 716460,
       "name": "Morpeko - 061/128",
-      "number": "061/128"
+      "number": "061/128",
+      "rarity": "Common"
     },
     {
       "id": 716461,
       "name": "Miraidon",
-      "number": "062/128"
+      "number": "062/128",
+      "rarity": "Rare"
     },
     {
       "id": 716462,
       "name": "Mewtwo",
-      "number": "063/128"
+      "number": "063/128",
+      "rarity": "Rare"
     },
     {
       "id": 716463,
       "name": "Mewtwo ex - 064/128",
-      "number": "064/128"
+      "number": "064/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 716464,
       "name": "Mew",
-      "number": "065/128"
+      "number": "065/128",
+      "rarity": "Rare"
     },
     {
       "id": 716465,
       "name": "Mew ex - 066/128",
-      "number": "066/128"
+      "number": "066/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 716466,
       "name": "Marill",
-      "number": "067/128"
+      "number": "067/128",
+      "rarity": "Common"
     },
     {
       "id": 716467,
       "name": "Azumarill",
-      "number": "068/128"
+      "number": "068/128",
+      "rarity": "Common"
     },
     {
       "id": 696678,
       "name": "Espeon",
-      "number": "069/128"
+      "number": "069/128",
+      "rarity": "Common"
     },
     {
       "id": 696834,
       "name": "Espeon ex",
-      "number": "070/128"
+      "number": "070/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 696677,
       "name": "Sylveon ex - 071/128",
-      "number": "071/128"
+      "number": "071/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 716468,
       "name": "Unown",
-      "number": "072/128"
+      "number": "072/128",
+      "rarity": "Common"
     },
     {
       "id": 716469,
       "name": "Drifloon - 073/128",
-      "number": "073/128"
+      "number": "073/128",
+      "rarity": "Common"
     },
     {
       "id": 716470,
       "name": "Cresselia",
-      "number": "074/128"
+      "number": "074/128",
+      "rarity": "Common"
     },
     {
       "id": 716471,
       "name": "Chandelure - 075/128",
-      "number": "075/128"
+      "number": "075/128",
+      "rarity": "Common"
     },
     {
       "id": 716472,
       "name": "Xerneas",
-      "number": "076/128"
+      "number": "076/128",
+      "rarity": "Rare"
     },
     {
       "id": 716473,
       "name": "Comfey",
-      "number": "077/128"
+      "number": "077/128",
+      "rarity": "Common"
     },
     {
       "id": 716474,
       "name": "Cosmog",
-      "number": "078/128"
+      "number": "078/128",
+      "rarity": "Common"
     },
     {
       "id": 716475,
       "name": "Cosmoem",
-      "number": "079/128"
+      "number": "079/128",
+      "rarity": "Common"
     },
     {
       "id": 716476,
       "name": "Lunala",
-      "number": "080/128"
+      "number": "080/128",
+      "rarity": "Rare"
     },
     {
       "id": 716477,
       "name": "Gimmighoul",
-      "number": "081/128"
+      "number": "081/128",
+      "rarity": "Common"
     },
     {
       "id": 716478,
       "name": "Groudon",
-      "number": "082/128"
+      "number": "082/128",
+      "rarity": "Rare"
     },
     {
       "id": 716479,
       "name": "Lucario",
-      "number": "083/128"
+      "number": "083/128",
+      "rarity": "Common"
     },
     {
       "id": 716480,
       "name": "Seismitoad",
-      "number": "084/128"
+      "number": "084/128",
+      "rarity": "Common"
     },
     {
       "id": 716481,
       "name": "Lycanroc - 085/128",
-      "number": "085/128"
+      "number": "085/128",
+      "rarity": "Common"
     },
     {
       "id": 716482,
       "name": "Koraidon",
-      "number": "086/128"
+      "number": "086/128",
+      "rarity": "Rare"
     },
     {
       "id": 716483,
       "name": "Nidoran F",
-      "number": "087/128"
+      "number": "087/128",
+      "rarity": "Common"
     },
     {
       "id": 716484,
       "name": "Nidorina",
-      "number": "088/128"
+      "number": "088/128",
+      "rarity": "Common"
     },
     {
       "id": 714359,
       "name": "Alolan Meowth - 089/128",
-      "number": "089/128"
+      "number": "089/128",
+      "rarity": "Common"
     },
     {
       "id": 716485,
       "name": "Gengar ex - 090/128",
-      "number": "090/128"
+      "number": "090/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 696679,
       "name": "Umbreon",
-      "number": "091/128"
+      "number": "091/128",
+      "rarity": "Common"
     },
     {
       "id": 696835,
       "name": "Umbreon ex",
-      "number": "092/128"
+      "number": "092/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 716486,
       "name": "Murkrow",
-      "number": "093/128"
+      "number": "093/128",
+      "rarity": "Common"
     },
     {
       "id": 716487,
       "name": "Scraggy - 094/128",
-      "number": "094/128"
+      "number": "094/128",
+      "rarity": "Common"
     },
     {
       "id": 716488,
       "name": "Zorua",
-      "number": "095/128"
+      "number": "095/128",
+      "rarity": "Common"
     },
     {
       "id": 716489,
       "name": "Zoroark",
-      "number": "096/128"
+      "number": "096/128",
+      "rarity": "Common"
     },
     {
       "id": 716490,
       "name": "Deino",
-      "number": "097/128"
+      "number": "097/128",
+      "rarity": "Common"
     },
     {
       "id": 716491,
       "name": "Zweilous",
-      "number": "098/128"
+      "number": "098/128",
+      "rarity": "Common"
     },
     {
       "id": 716492,
       "name": "Hydreigon",
-      "number": "099/128"
+      "number": "099/128",
+      "rarity": "Common"
     },
     {
       "id": 716493,
       "name": "Yveltal",
-      "number": "100/128"
+      "number": "100/128",
+      "rarity": "Rare"
     },
     {
       "id": 716494,
       "name": "Galarian Meowth - 101/128",
-      "number": "101/128"
+      "number": "101/128",
+      "rarity": "Common"
     },
     {
       "id": 716495,
       "name": "Jirachi ex - 102/128",
-      "number": "102/128"
+      "number": "102/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 716496,
       "name": "Dialga",
-      "number": "103/128"
+      "number": "103/128",
+      "rarity": "Rare"
     },
     {
       "id": 716497,
       "name": "Ferrothorn",
-      "number": "104/128"
+      "number": "104/128",
+      "rarity": "Common"
     },
     {
       "id": 716498,
       "name": "Solgaleo",
-      "number": "105/128"
+      "number": "105/128",
+      "rarity": "Rare"
     },
     {
       "id": 716499,
       "name": "Zacian",
-      "number": "106/128"
+      "number": "106/128",
+      "rarity": "Rare"
     },
     {
       "id": 716500,
       "name": "Zamazenta",
-      "number": "107/128"
+      "number": "107/128",
+      "rarity": "Rare"
     },
     {
       "id": 716501,
       "name": "Gholdengo - 108/128",
-      "number": "108/128"
+      "number": "108/128",
+      "rarity": "Common"
     },
     {
       "id": 716502,
       "name": "Salamence ex - 109/128",
-      "number": "109/128"
+      "number": "109/128",
+      "rarity": "Double Rare"
     },
     {
       "id": 716503,
       "name": "Jangmo-o",
-      "number": "110/128"
+      "number": "110/128",
+      "rarity": "Common"
     },
     {
       "id": 716504,
       "name": "Hakamo-o",
-      "number": "111/128"
+      "number": "111/128",
+      "rarity": "Common"
     },
     {
       "id": 716505,
       "name": "Kommo-o - 112/128",
-      "number": "112/128"
+      "number": "112/128",
+      "rarity": "Common"
     },
     {
       "id": 714356,
       "name": "Meowth - 113/128",
-      "number": "113/128"
+      "number": "113/128",
+      "rarity": "Common"
     },
     {
       "id": 716506,
       "name": "Kangaskhan",
-      "number": "114/128"
+      "number": "114/128",
+      "rarity": "Common"
     },
     {
       "id": 716507,
       "name": "Ditto",
-      "number": "115/128"
+      "number": "115/128",
+      "rarity": "Common"
     },
     {
       "id": 714357,
       "name": "Eevee - 116/128",
-      "number": "116/128"
+      "number": "116/128",
+      "rarity": "Common"
     },
     {
       "id": 696832,
       "name": "Eevee - 117/128",
-      "number": "117/128"
+      "number": "117/128",
+      "rarity": "Common"
     },
     {
       "id": 696833,
       "name": "Eevee - 118/128",
-      "number": "118/128"
+      "number": "118/128",
+      "rarity": "Common"
     },
     {
       "id": 716508,
       "name": "Snorlax",
-      "number": "119/128"
+      "number": "119/128",
+      "rarity": "Common"
     },
     {
       "id": 716509,
       "name": "Igglybuff",
-      "number": "120/128"
+      "number": "120/128",
+      "rarity": "Common"
     },
     {
       "id": 716510,
       "name": "Lugia",
-      "number": "121/128"
+      "number": "121/128",
+      "rarity": "Rare"
     },
     {
       "id": 716511,
       "name": "Hisuian Zorua - 122/128",
-      "number": "122/128"
+      "number": "122/128",
+      "rarity": "Common"
     },
     {
       "id": 716512,
       "name": "Hisuian Zoroark",
-      "number": "123/128"
+      "number": "123/128",
+      "rarity": "Common"
     },
     {
       "id": 716513,
       "name": "Minior",
-      "number": "124/128"
+      "number": "124/128",
+      "rarity": "Common"
     },
     {
       "id": 716514,
       "name": "Maushold - 125/128",
-      "number": "125/128"
+      "number": "125/128",
+      "rarity": "Common"
     },
     {
       "id": 716515,
       "name": "Poke Pad",
-      "number": "126/128"
+      "number": "126/128",
+      "rarity": "Common"
     },
     {
       "id": 716516,
       "name": "Switch",
-      "number": "127/128"
+      "number": "127/128",
+      "rarity": "Common"
     },
     {
       "id": 716517,
       "name": "Ultra Ball",
-      "number": "128/128"
+      "number": "128/128",
+      "rarity": "Common"
     },
     {
       "id": 716218,
       "name": "Alolan Exeggutor - 129/128",
-      "number": "129/128"
+      "number": "129/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716219,
       "name": "Moltres - 130/128",
-      "number": "130/128"
+      "number": "130/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 696683,
       "name": "Lapras - 131/128",
-      "number": "131/128"
+      "number": "131/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716220,
       "name": "Articuno - 132/128",
-      "number": "132/128"
+      "number": "132/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716221,
       "name": "Zapdos - 133/128",
-      "number": "133/128"
+      "number": "133/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716222,
       "name": "Toxtricity - 134/128",
-      "number": "134/128"
+      "number": "134/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716223,
       "name": "Morpeko - 135/128",
-      "number": "135/128"
+      "number": "135/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 696684,
       "name": "Drifloon - 136/128",
-      "number": "136/128"
+      "number": "136/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716224,
       "name": "Chandelure - 137/128",
-      "number": "137/128"
+      "number": "137/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 696685,
       "name": "Lycanroc - 138/128",
-      "number": "138/128"
+      "number": "138/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 714360,
       "name": "Alolan Meowth - 139/128",
-      "number": "139/128"
+      "number": "139/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716225,
       "name": "Scraggy - 140/128",
-      "number": "140/128"
+      "number": "140/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716226,
       "name": "Galarian Meowth - 141/128",
-      "number": "141/128"
+      "number": "141/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716227,
       "name": "Gholdengo - 142/128",
-      "number": "142/128"
+      "number": "142/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 717621,
       "name": "Kommo-o - 143/128",
-      "number": "143/128"
+      "number": "143/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 714358,
       "name": "Meowth - 144/128",
-      "number": "144/128"
+      "number": "144/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 696686,
       "name": "Hisuian Zorua - 145/128",
-      "number": "145/128"
+      "number": "145/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716228,
       "name": "Maushold - 146/128",
-      "number": "146/128"
+      "number": "146/128",
+      "rarity": "Illustration Rare"
     },
     {
       "id": 716229,
       "name": "Fuecoco ex - 147/128",
-      "number": "147/128"
+      "number": "147/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 716230,
       "name": "Greninja ex - 148/128",
-      "number": "148/128"
+      "number": "148/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 712953,
       "name": "Pikachu ex - 149/128",
-      "number": "149/128"
+      "number": "149/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 712954,
       "name": "Pikachu ex - 150/128",
-      "number": "150/128"
+      "number": "150/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 717603,
       "name": "Mewtwo ex - 151/128",
-      "number": "151/128"
+      "number": "151/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 717605,
       "name": "Mew ex - 152/128",
-      "number": "152/128"
+      "number": "152/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 716231,
       "name": "Sylveon ex - 153/128",
-      "number": "153/128"
+      "number": "153/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 717610,
       "name": "Gengar ex - 154/128",
-      "number": "154/128"
+      "number": "154/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 716232,
       "name": "Jirachi ex - 155/128",
-      "number": "155/128"
+      "number": "155/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 716233,
       "name": "Salamence ex - 156/128",
-      "number": "156/128"
+      "number": "156/128",
+      "rarity": "Special Illustration Rare"
     },
     {
       "id": 696687,
       "name": "Mewtwo ex - 157/128",
-      "number": "157/128"
+      "number": "157/128",
+      "rarity": "Futuristic Rare"
     },
     {
       "id": 696688,
       "name": "Mew ex - 158/128",
-      "number": "158/128"
+      "number": "158/128",
+      "rarity": "Futuristic Rare"
     },
     {
       "id": 717609,
       "name": "Mew - B/RGB",
-      "number": "B/RGB"
+      "number": "B/RGB",
+      "rarity": "RGB Rare"
     },
     {
       "id": 717608,
       "name": "Mew - G/RGB",
-      "number": "G/RGB"
+      "number": "G/RGB",
+      "rarity": "RGB Rare"
     },
     {
       "id": 717607,
       "name": "Mew - R/RGB",
-      "number": "R/RGB"
+      "number": "R/RGB",
+      "rarity": "RGB Rare"
     }
   ],
   "product_type": "cards"

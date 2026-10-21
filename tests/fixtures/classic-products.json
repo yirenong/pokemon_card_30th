@@ -14,152 +14,182 @@
     {
       "id": 716192,
       "name": "Raikou",
-      "number": "050/185"
+      "number": "050/185",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716200,
       "name": "Darkrai & Cresselia Legend (Bottom)",
-      "number": "100/102"
+      "number": "100/102",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716202,
       "name": "N",
-      "number": "101/101"
+      "number": "101/101",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716205,
       "name": "Shining Celebi",
-      "number": "106/105"
+      "number": "106/105",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716203,
       "name": "Palkia LV.X",
-      "number": "106/106"
+      "number": "106/106",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716204,
       "name": "M Gardevoir EX",
-      "number": "106/160"
+      "number": "106/160",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716206,
       "name": "Scizor ex",
-      "number": "108/115"
+      "number": "108/115",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716158,
       "name": "Genesect EX (Team Plasma)",
-      "number": "11/101"
+      "number": "11/101",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716157,
       "name": "Metagross (Delta Species)",
-      "number": "11/113"
+      "number": "11/113",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716207,
       "name": "Mew VMAX",
-      "number": "114/264"
+      "number": "114/264",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716208,
       "name": "Arceus VSTAR",
-      "number": "123/172"
+      "number": "123/172",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716209,
       "name": "Zacian V",
-      "number": "138/202"
+      "number": "138/202",
+      "rarity": "Classic Collection"
     },
     {
       "id": 714386,
       "name": "Lugia",
-      "number": "149/147"
+      "number": "149/147",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716159,
       "name": "Misty",
-      "number": "18/132"
+      "number": "18/132",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716160,
       "name": "Dark Tyranitar",
-      "number": "19/109"
+      "number": "19/109",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716210,
       "name": "Magikarp",
-      "number": "203/193"
+      "number": "203/193",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716161,
       "name": "Sneasel",
-      "number": "25/111"
+      "number": "25/111",
+      "rarity": "Classic Collection"
     },
     {
       "id": 714373,
       "name": "Pikachu & Zekrom GX",
-      "number": "33/181"
+      "number": "33/181",
+      "rarity": "Classic Collection"
     },
     {
       "id": 714372,
       "name": "Charizard",
-      "number": "4/102"
+      "number": "4/102",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716162,
       "name": "Greninja BREAK",
-      "number": "41/122"
+      "number": "41/122",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716163,
       "name": "Uxie",
-      "number": "43/146"
+      "number": "43/146",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716191,
       "name": "Crobat G",
-      "number": "47/127"
+      "number": "47/127",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716156,
       "name": "Delcatty",
-      "number": "5/109"
+      "number": "5/109",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716193,
       "name": "Buzzwole GX",
-      "number": "57/111"
+      "number": "57/111",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716194,
       "name": "Pikachu",
-      "number": "58/102"
+      "number": "58/102",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716195,
       "name": "Erika's Jigglypuff",
-      "number": "69/132"
+      "number": "69/132",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716196,
       "name": "Rayquaza EX",
-      "number": "85/124"
+      "number": "85/124",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716197,
       "name": "Solgaleo GX",
-      "number": "89/149"
+      "number": "89/149",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716198,
       "name": "Gengar (Prime)",
-      "number": "94/102"
+      "number": "94/102",
+      "rarity": "Classic Collection"
     },
     {
       "id": 716199,
       "name": "Darkrai & Cresselia Legend (Top)",
-      "number": "99/102"
+      "number": "99/102",
+      "rarity": "Classic Collection"
     }
   ],
   "product_type": "cards"

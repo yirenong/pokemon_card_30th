@@ -181,16 +181,22 @@
         state.status=['STORAGE_NOT_CONFIGURED','SCHEMA_NOT_READY'].includes(state.error) ? 'unconfigured' : 'offline';
       } finally {busy=false;emit()}
     }
-    function setOwned(id,owned) {
-      if (!ids.has(id) || typeof owned !== 'boolean') return;
-      pending.set(id,{owned,token:++sequence});
+    function setMany(changes) {
+      let changed=false;
+      for (const {id,owned} of changes) {
+        if (!ids.has(id) || typeof owned !== 'boolean') continue;
+        pending.set(id,{owned,token:++sequence});
+        changed=true;
+      }
+      if (!changed) return;
       storePending();
       state.status='queued';
       emit();
       if (timer) root.clearTimeout(timer);
       timer=root.setTimeout(()=>synchronize(),180);
     }
-    return {state, setOwned, start:synchronize, refresh:synchronize, flush:()=>synchronize(true),dispose:()=>{if(timer) root.clearTimeout(timer)}};
+    function setOwned(id,owned) {setMany([{id,owned}])}
+    return {state, setOwned, setMany, start:synchronize, refresh:synchronize, flush:()=>synchronize(true),dispose:()=>{if(timer) root.clearTimeout(timer)}};
   }
   const exported={create,OUTBOX_KEY};
   if (typeof module !== 'undefined' && module.exports) module.exports=exported;
@@ -291,10 +297,19 @@ function render() {
   $('#percent').textContent = (cards.length ? Math.round(owned / cards.length * 100) : 0) + '%';
   $('#progress').value = owned;
   $('#progress').max = cards.length;
+  const selectedRarity = $('#rarity').value;
+  const rarityCards = cards.filter(card => card.rarity === selectedRarity);
+  const rarityOwned = rarityCards.filter(card => count(card.id) > 0).length;
+  $('#checkRarity').disabled = !rarityCards.length || rarityOwned === rarityCards.length;
+  $('#uncheckRarity').disabled = !rarityOwned;
+  $('#checkRarity').textContent = rarityCards.length ? 'Check all ' + selectedRarity : 'Check all in rarity';
+  $('#uncheckRarity').textContent = rarityCards.length ? 'Uncheck all ' + selectedRarity : 'Uncheck all in rarity';
+  $('#rarityProgress').textContent = rarityCards.length ? rarityOwned + ' / ' + rarityCards.length + ' ' + selectedRarity + ' cards owned' : 'Select a rarity to check or uncheck the whole group.';
   const query = $('#search').value.trim().toLowerCase();
   const list = cards.filter(card =>
     (status === 'all' || status === 'owned' && count(card.id) > 0 || status === 'missing' && !count(card.id)) &&
     ($('#group').value === 'all' || $('#group').value === card.group) &&
+    (!$('#rarity').value || $('#rarity').value === 'all' || $('#rarity').value === card.rarity) &&
     (!query || card.name.toLowerCase().includes(query) || card.number.includes(query))
   );
   if ($('#sort').value === 'name') list.sort((a,b) => a.name.localeCompare(b.name) || Number(a.number)-Number(b.number));
@@ -310,7 +325,7 @@ function render() {
   const shown = layout === 'three' ? list.slice(pageIndex * 9, pageIndex * 9 + 9) : layout === 'list' ? list : list.slice(0, limit);
   $('#grid').classList.toggle('list-layout', layout === 'list');
   $('#grid').classList.toggle('three-layout', layout === 'three');
-  $('#grid').innerHTML = shown.map(card => `<article class="checklist-card ${count(card.id) ? 'is-owned' : ''}"><div class="card-art ${count(card.id) ? 'owned' : ''}" style="--bg:#e9e7db"><span class="card-index">#${card.number}</span><button class="view" data-card="${card.id}" aria-label="Inspect ${escape(card.name)} ${card.number}">${image(card)}</button></div><div class="card-info"><div><h3>${escape(card.name)}</h3><p>${card.group} · #${card.printedNumber || card.number}</p></div></div>${cardPrice(card)}${controls(card)}</article>`).join('');
+  $('#grid').innerHTML = shown.map(card => `<article class="checklist-card ${count(card.id) ? 'is-owned' : ''}"><div class="card-art ${count(card.id) ? 'owned' : ''}" style="--bg:#e9e7db"><span class="card-index">#${card.number}</span><button class="view" data-card="${card.id}" aria-label="Inspect ${escape(card.name)} ${card.number}">${image(card)}</button></div><div class="card-info"><div><h3>${escape(card.name)}</h3><p>${card.group} · #${card.printedNumber || card.number} · ${escape(card.rarity || "")}</p></div></div>${cardPrice(card)}${controls(card)}</article>`).join('');
   $('#results').textContent = `${list.length} matching cards` + (layout === 'grid' ? ` · Showing ${shown.length}` : layout === 'three' ? ` · ${shown.length} cards on this page` : '');
   $('#empty').hidden = list.length > 0;
   $('#loadMore').hidden = layout !== 'grid' || limit >= list.length;
@@ -328,7 +343,7 @@ function render() {
 }
 function openCard(card) {
   activeCard = card;
-  $('#detailContent').innerHTML = `${image(card)}<div><p class="eyebrow">30TH CELEBRATION</p><h2>${escape(card.name)}</h2><p>${card.group} · #${card.printedNumber || card.number}</p>${cardPrice(card,true)}${controls(card)}</div>`;
+  $('#detailContent').innerHTML = `${image(card)}<div><p class="eyebrow">30TH CELEBRATION</p><h2>${escape(card.name)}</h2><p>${card.group} · #${card.printedNumber || card.number} · ${escape(card.rarity || "")}</p>${cardPrice(card,true)}${controls(card)}</div>`;
   imageErrors();
 }
 function setOwned(id, checked) {
@@ -339,6 +354,20 @@ function setOwned(id, checked) {
   render();
   if (activeCard && $('#detail').open) openCard(activeCard);
 }
+function setRarityOwned(owned) {
+  const rarity=$('#rarity').value;
+  if (!rarity || rarity === 'all') return;
+  const changes=cards.filter(card => card.rarity === rarity && (count(card.id) > 0) !== owned).map(card => ({id:card.id,owned}));
+  if (!changes.length) return;
+  for (const change of changes) quantities[change.id]=owned ? 1 : 0;
+  persist();
+  collectionSync?.setMany(changes);
+  render();
+  if (activeCard && $('#detail').open) openCard(activeCard);
+}
+$('#checkRarity').onclick=()=>setRarityOwned(true);
+$('#uncheckRarity').onclick=()=>setRarityOwned(false);
+
 document.addEventListener('change', event => {
   const checkbox = event.target.closest('[data-owned]');
   if (!checkbox) return;
@@ -373,7 +402,7 @@ document.querySelectorAll('[data-layout]').forEach(button => button.onclick = ()
   try {localStorage.setItem(VIEW_KEY, layout)} catch {}
   render();
 });
-for (const selector of ['#search', '#group', '#sort']) $(selector).addEventListener(selector === '#search' ? 'input' : 'change', () => {limit = 24; pageIndex = 0; render()});
+for (const selector of ['#search', '#group', '#rarity', '#sort']) $(selector).addEventListener(selector === '#search' ? 'input' : 'change', () => {limit = 24; pageIndex = 0; render()});
 $('#loadMore').onclick = () => {limit += 24; render()};
 $('#previousPage').onclick = () => {pageIndex = Math.max(0, pageIndex - 1); render()};
 $('#nextPage').onclick = () => {pageIndex++; render()};

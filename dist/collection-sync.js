@@ -81,16 +81,22 @@
         state.status=['STORAGE_NOT_CONFIGURED','SCHEMA_NOT_READY'].includes(state.error) ? 'unconfigured' : 'offline';
       } finally {busy=false;emit()}
     }
-    function setOwned(id,owned) {
-      if (!ids.has(id) || typeof owned !== 'boolean') return;
-      pending.set(id,{owned,token:++sequence});
+    function setMany(changes) {
+      let changed=false;
+      for (const {id,owned} of changes) {
+        if (!ids.has(id) || typeof owned !== 'boolean') continue;
+        pending.set(id,{owned,token:++sequence});
+        changed=true;
+      }
+      if (!changed) return;
       storePending();
       state.status='queued';
       emit();
       if (timer) root.clearTimeout(timer);
       timer=root.setTimeout(()=>synchronize(),180);
     }
-    return {state, setOwned, start:synchronize, refresh:synchronize, flush:()=>synchronize(true),dispose:()=>{if(timer) root.clearTimeout(timer)}};
+    function setOwned(id,owned) {setMany([{id,owned}])}
+    return {state, setOwned, setMany, start:synchronize, refresh:synchronize, flush:()=>synchronize(true),dispose:()=>{if(timer) root.clearTimeout(timer)}};
   }
   const exported={create,OUTBOX_KEY};
   if (typeof module !== 'undefined' && module.exports) module.exports=exported;

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "node build-static.cjs",
-    "test": "node verify.cjs && node verify-pricing.cjs && node verify-loading.cjs && node verify-catalog.cjs && node verify-three-view.cjs && node verify-copy.cjs && node verify-backend.cjs",
+    "test": "node verify.cjs && node verify-pricing.cjs && node verify-loading.cjs && node verify-catalog.cjs && node verify-three-view.cjs && node verify-copy.cjs && node verify-backend.cjs && node verify-rarity.cjs",
     "dev": "node --env-file-if-exists=.env.local scripts/dev.cjs",
     "db:migrate": "node --env-file-if-exists=.env.local scripts/migrate.cjs",
     "test:db": "node scripts/run-db-tests.cjs"
