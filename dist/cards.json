@@ -3764,63 +3764,95 @@
     "name": "Basic Energy 009",
     "number": "009",
     "group": "Energy",
-    "image": "",
-    "rarity": "Energy"
+    "image": "assets/energy-009.png",
+    "rarity": "Energy",
+    "imageSource": {
+      "provider": "pokemon.com",
+      "url": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/MEE/MEE_EN_9.png"
+    }
   },
   {
     "id": "30c-energy-10",
     "name": "Basic Energy 010",
     "number": "010",
     "group": "Energy",
-    "image": "",
-    "rarity": "Energy"
+    "image": "assets/energy-010.png",
+    "rarity": "Energy",
+    "imageSource": {
+      "provider": "pokemon.com",
+      "url": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/MEE/MEE_EN_10.png"
+    }
   },
   {
     "id": "30c-energy-11",
     "name": "Basic Energy 011",
     "number": "011",
     "group": "Energy",
-    "image": "",
-    "rarity": "Energy"
+    "image": "assets/energy-011.png",
+    "rarity": "Energy",
+    "imageSource": {
+      "provider": "pokemon.com",
+      "url": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/MEE/MEE_EN_11.png"
+    }
   },
   {
     "id": "30c-energy-12",
     "name": "Basic Energy 012",
     "number": "012",
     "group": "Energy",
-    "image": "",
-    "rarity": "Energy"
+    "image": "assets/energy-012.png",
+    "rarity": "Energy",
+    "imageSource": {
+      "provider": "pokemon.com",
+      "url": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/MEE/MEE_EN_12.png"
+    }
   },
   {
     "id": "30c-energy-13",
     "name": "Basic Energy 013",
     "number": "013",
     "group": "Energy",
-    "image": "",
-    "rarity": "Energy"
+    "image": "assets/energy-013.png",
+    "rarity": "Energy",
+    "imageSource": {
+      "provider": "pokemon.com",
+      "url": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/MEE/MEE_EN_13.png"
+    }
   },
   {
     "id": "30c-energy-14",
     "name": "Basic Energy 014",
     "number": "014",
     "group": "Energy",
-    "image": "",
-    "rarity": "Energy"
+    "image": "assets/energy-014.png",
+    "rarity": "Energy",
+    "imageSource": {
+      "provider": "pokemon.com",
+      "url": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/MEE/MEE_EN_14.png"
+    }
   },
   {
     "id": "30c-energy-15",
     "name": "Basic Energy 015",
     "number": "015",
     "group": "Energy",
-    "image": "",
-    "rarity": "Energy"
+    "image": "assets/energy-015.png",
+    "rarity": "Energy",
+    "imageSource": {
+      "provider": "pokemon.com",
+      "url": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/MEE/MEE_EN_15.png"
+    }
   },
   {
     "id": "30c-energy-16",
     "name": "Basic Energy 016",
     "number": "016",
     "group": "Energy",
-    "image": "",
-    "rarity": "Energy"
+    "image": "assets/energy-016.png",
+    "rarity": "Energy",
+    "imageSource": {
+      "provider": "pokemon.com",
+      "url": "https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/MEE/MEE_EN_16.png"
+    }
   }
 ]
