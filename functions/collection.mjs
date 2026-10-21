@@ -15,7 +15,7 @@ export default {
     const headers = Object.fromEntries(request.headers);
     headers.host = new URL(request.url).host;
     let body;
-    if (request.method === 'PATCH') {
+    if (['PATCH','POST'].includes(request.method)) {
       const raw = await request.text();
       if (Buffer.byteLength(raw)>32768) return Response.json({error:'PAYLOAD_TOO_LARGE'},{status:413});
       try {body=JSON.parse(raw)} catch {return Response.json({error:'INVALID_CHANGES'},{status:400})}

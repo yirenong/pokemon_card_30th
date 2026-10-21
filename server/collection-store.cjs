@@ -1,6 +1,11 @@
 ﻿const COLLECTION_ID = '30th-celebration';
 class CollectionStore {
   constructor(pool, loginId) {this.pool = pool; this.collectionId = loginId ? COLLECTION_ID + ':' + loginId : COLLECTION_ID}
+  async register() {
+    const result = await this.pool.query('INSERT INTO pokemon_collections (collection_id, initialized) VALUES ($1, true) ON CONFLICT (collection_id) DO NOTHING RETURNING collection_id', [this.collectionId]);
+    if (!result.rows.length) throw Object.assign(new Error('Login already exists'), {code:'LOGIN_EXISTS'});
+    return this.read();
+  }
   async read(client = this.pool) {
     const result = await client.query(`
       SELECT c.initialized, c.revision::text, c.updated_at,
@@ -9,7 +14,7 @@ class CollectionStore {
       LEFT JOIN pokemon_collection_cards s ON s.collection_id = c.collection_id
       WHERE c.collection_id = $1
       GROUP BY c.collection_id`, [this.collectionId]);
-    if (!result.rows.length) throw Object.assign(new Error('Run the database migration.'),{code:'SCHEMA_NOT_READY'});
+    if (!result.rows.length) throw Object.assign(new Error('Login not found'),{code:'LOGIN_NOT_FOUND'});
     const row = result.rows[0];
     return {initialized:row.initialized, revision:Number(row.revision), updatedAt:new Date(row.updated_at).toISOString(), owned:row.owned};
   }

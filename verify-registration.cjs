@@ -1,0 +1,21 @@
+const assert=require('assert/strict'),fs=require('fs'),{JSDOM}=require('jsdom');
+const {createHandler}=require('./server/collection-handler.cjs');
+const response=()=>({setHeader(){},status(code){this.code=code;return this},json(data){this.data=data}});
+(async()=>{
+ const profiles=new Map();let calls=0;
+ const handler=createHandler(id=>({async register(){calls++;if(profiles.has(id))throw Object.assign(Error(),{code:'LOGIN_EXISTS'});const data={initialized:true,revision:0,updatedAt:new Date().toISOString(),owned:{}};profiles.set(id,data);return data},async read(){if(!profiles.has(id))throw Object.assign(Error(),{code:'LOGIN_NOT_FOUND'});return profiles.get(id)}}));
+ const request=async(method,id,origin='https://tracker.test')=>{const res=response();await handler({method,headers:{'x-login-id':id,origin,host:'tracker.test','content-type':'application/json'},body:{action:'register'}},res);return res};
+ assert.equal((await request('POST','new_collector')).code,201);
+ assert.equal((await request('POST','new_collector')).code,409);
+ assert.deepEqual((await request('GET','new_collector')).data.owned,{});
+ assert.equal((await request('GET','not_registered')).code,404);
+ assert.equal((await request('POST','../../bad')).code,401);
+ assert.equal((await request('POST','other_collector','https://other.test')).code,403);assert.equal(calls,2);
+ const dom=new JSDOM('<body></body>',{url:'https://tracker.test',runScripts:'outside-only'}),w=dom.window;w.HTMLDialogElement.prototype.showModal=function(){this.open=true};w.eval(fs.readFileSync('dist/login.js','utf8'));const d=w.document;
+ d.querySelector('.login-toggle').click();assert(d.querySelector('.login-names').hidden);assert.match(d.querySelector('#loginTitle').textContent,/Start your/);
+ const input=d.querySelector('#loginId');input.value='new_collector';input.dispatchEvent(new w.Event('input'));assert(!d.querySelector('.login-submit').disabled);
+ let sent;w.fetch=async(url,options)=>{sent={url,...options};return{ok:false,status:409}};
+ await d.querySelector('form').onsubmit({preventDefault(){}});assert.equal(sent.method,'POST');assert.equal(sent.headers['X-Login-Id'],'new_collector');assert.deepEqual(JSON.parse(sent.body),{action:'register'});assert.match(d.querySelector('#loginError').textContent,/already taken/);assert(!input.disabled);
+ d.querySelector('.login-toggle').click();assert(!d.querySelector('.login-names').hidden);input.value='new_collector';input.dispatchEvent(new w.Event('input'));w.fetch=async(url,options)=>{sent=options;return{ok:false,status:404}};await d.querySelector('form').onsubmit({preventDefault(){}});assert.equal(sent.method,'GET');assert.match(d.querySelector('#loginError').textContent,/not found/);
+ dom.window.close();console.log('PASS: registration creates isolated profiles; duplicates, invalid IDs, cross-origin writes and unknown logins rejected; UI registration/login modes and server errors');
+})().catch(e=>{console.error(e);process.exit(1)});

@@ -38,3 +38,7 @@ The app now accepts shawn, yongtai, sam, and yiren. Each profile has its own col
 Migration 002 creates the four empty profiles without changing existing selections. Run migrations on the test branch first. Deploy the updated storage Function and the Vercel application together so the API forwards the login ID. The remote adapter rejects services that do not acknowledge the selected ID.
 
 Run the account-isolation test with COLLECTION_TEST_MODE=1 and .env.test.local: node --env-file=.env.test.local verify-accounts.cjs.
+
+## Register a profile
+
+Choose ?Register a login? on the login screen. IDs use 3?24 lowercase letters, numbers, underscores or hyphens. Registration creates a separate empty collection atomically; duplicate IDs are rejected. Enter the same ID on another device to open it. Profiles remain password-free and accessible to anyone who knows the ID. Deploy both the Neon storage Function and frontend/API for registration support; no schema migration is needed.

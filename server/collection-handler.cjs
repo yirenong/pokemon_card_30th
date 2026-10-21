@@ -20,14 +20,14 @@ function createHandler(storeFactory = loginId => process.env.DATABASE_URL ? new 
     res.setHeader('Cache-Control','no-store, max-age=0');
     res.setHeader('X-Content-Type-Options','nosniff');
     res.setHeader('Vary','X-Login-Id');
-    if (!['GET','PATCH'].includes(req.method)) {
-      res.setHeader('Allow','GET, PATCH');
+    if (!['GET','PATCH','POST'].includes(req.method)) {
+      res.setHeader('Allow','GET, PATCH, POST');
       return res.status(405).json({error:'METHOD_NOT_ALLOWED'});
     }
     const loginId = req.headers['x-login-id'];
-    if (loginId !== undefined && !['shawn','yongtai','sam','yiren'].includes(loginId)) return res.status(401).json({error:'INVALID_LOGIN_ID'});
+    if (loginId !== undefined && (typeof loginId !== 'string' || !/^[a-z0-9][a-z0-9_-]{2,23}$/.test(loginId))) return res.status(401).json({error:'INVALID_LOGIN_ID'});
     let data;
-    if (req.method === 'PATCH') {
+    if (req.method === 'PATCH' || req.method === 'POST') {
       // No login is required, but unrelated browser origins cannot submit writes.
       const origin = req.headers.origin;
       const host = req.headers.host;
@@ -36,14 +36,18 @@ function createHandler(storeFactory = loginId => process.env.DATABASE_URL ? new 
       try {
         const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
         if (Buffer.byteLength(JSON.stringify(body) || '') > 32768) return res.status(413).json({error:'PAYLOAD_TOO_LARGE'});
-        data = validateBody(body);
+        if (req.method === 'POST') {
+          if (!loginId || body?.action !== 'register') return res.status(400).json({error:'INVALID_REGISTRATION'});
+        } else data = validateBody(body);
       } catch {return res.status(400).json({error:'INVALID_CHANGES'})}
     }
     try {
       const store = storeFactory(loginId);
-      const snapshot = req.method === 'GET' ? await store.read() : await store.update(data.changes,data.initialize);
-      return res.status(200).json({...snapshot,...(loginId?{loginId}:{})});
+      const snapshot = req.method === 'POST' ? await store.register() : req.method === 'GET' ? await store.read() : await store.update(data.changes,data.initialize);
+      return res.status(req.method === 'POST' ? 201 : 200).json({...snapshot,...(loginId?{loginId}:{})});
     } catch (error) {
+      if (error.code === 'LOGIN_EXISTS') return res.status(409).json({error:'LOGIN_EXISTS'});
+      if (error.code === 'LOGIN_NOT_FOUND') return res.status(404).json({error:'LOGIN_NOT_FOUND'});
       const code = error.code === 'STORAGE_NOT_CONFIGURED' ? 'STORAGE_NOT_CONFIGURED' : ['SCHEMA_NOT_READY','42P01'].includes(error.code) ? 'SCHEMA_NOT_READY' : 'STORAGE_UNAVAILABLE';
       console.error('Collection storage request failed',code);
       return res.status(503).json({error:code});
