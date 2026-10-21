@@ -196,7 +196,15 @@ document.querySelectorAll('[data-layout]').forEach(button => button.onclick = ()
   try {localStorage.setItem(VIEW_KEY, layout)} catch {}
   render();
 });
-for (const selector of ['#search', '#group', '#rarity', '#sort']) $(selector).addEventListener(selector === '#search' ? 'input' : 'change', () => {limit = 24; pageIndex = 0; render()});
+for (const selector of ['#search', '#group', '#rarity', '#sort']) $(selector).addEventListener(selector === '#search' ? 'input' : 'change', () => {
+  // Reset incompatible filters so switching collections exposes their cards.
+  const group = $('#group').value, rarity = $('#rarity').value;
+  if (group !== 'all' && rarity !== 'all' && !cards.some(card => card.group === group && card.rarity === rarity)) {
+    if (selector === '#group') $('#rarity').value = 'all';
+    if (selector === '#rarity') $('#group').value = 'all';
+  }
+  limit = 24; pageIndex = 0; render();
+});
 $('#loadMore').onclick = () => {limit += 24; render()};
 $('#previousPage').onclick = () => {pageIndex = Math.max(0, pageIndex - 1); render()};
 $('#nextPage').onclick = () => {pageIndex++; render()};
